@@ -1,6 +1,7 @@
 body {
     font-family: Arial, sans-serif;
     padding: 20px;
+    font-size: 16px;
     background: lightgray;
   }
   
@@ -29,33 +30,38 @@ body {
   
   .btn {
     display: inline-block;
+    padding: 12px 20px; /* bigger for tapping */
+    font-size: 16px;
     background: #119400;
-    
     color: white;
-    padding: 10px;
     text-decoration: none;
+    border-radius: 4px;
+    text-align: center;
+    cursor: pointer;
   }
 
   label { 
-    display: block; 
-    margin-top: 10px; 
-    font-weight: bold; 
+    border: 1px solid #ccc;
+    padding: 15px; /* more space */
+    margin: 10px 0;
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    align-items: flex-start;
   }
 
   input, textarea, select {
-       width: 100%; 
-       padding: 8px; 
-       margin-top: 5px; 
-       box-sizing: border-box; }
+       width: 100%;
+       padding: 12px; /* larger padding for touch screens */
+       font-size: 16px;
+       margin-top: 5px;
+       margin-bottom: 15px;
+       box-sizing: border-box;
+       border: 1px solid #ccc;
+       border-radius: 4px;
+  }
 
-  .btn {
-       margin-top: 15px; 
-       padding: 10px 15px; 
-       background: #007bff; 
-       color: white; 
-       border: none; 
-       cursor: pointer; 
-       border-radius: 4px; }
+
 
   .btn:hover {
        background: #0056b3; 
@@ -86,44 +92,43 @@ body {
     display: flex; 
   }
 
-  .btn { 
-    display: inline-block; 
-    padding: 5px 10px; 
-    background: #007bff; 
-    color: white; 
-    text-decoration: none; 
-    border-radius: 3px; 
-  }
+
   
   /* Mobile view */
 @media (max-width: 768px) {
   .listing {
-  flex-direction: column; /* Stack images on top of text */
-  align-items: center;
-  text-align: center;
+    flex-direction: column; /* Stack images on top of text */
+    align-items: center;
+    text-align: center;
+    padding: 10px;
   }
   
   
   .listing .photos {
-  flex-wrap: wrap;
-  justify-content: center;
+    flex-wrap: wrap;
+    justify-content: center;
   }
   
   
   .listing .photos img {
-  width: 100px;
-  height: 80px;
-  margin: 5px;
+    width: 100px;
+    height: 80px;
+    margin: 5px;
   }
   
   
   .search-box input {
-  width: 70%;
-  padding: 8px;
+    width: 70%;
+    padding: 8px;
+  }
+
+  .btn {
+    padding: 12px 20px;
+    font-size: 16px;
   }
   
-  
   .search-box button {
-  padding: 8px 12px;
+    padding: 12px 20px;
+    font-size: 16px;
   }
   }
