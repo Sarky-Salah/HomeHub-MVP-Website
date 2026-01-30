@@ -1,0 +1,29 @@
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+  }
+  
+  header {
+    background: #0a3cff;
+    color: white;
+    padding: 20px;
+  }
+  
+  .listing {
+    border: 1px solid #ccc;
+    padding: 15px;
+    margin-bottom: 15px;
+  }
+  
+  img {
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  .btn {
+    display: inline-block;
+    background: #0a3cff;
+    color: white;
+    padding: 10px;
+    text-decoration: none;
+  }
