@@ -6,21 +6,80 @@
 </head>
 <body>
 
-<h1>Available Houses</h1>
+<!-- 🔍 Search Bar -->
+<div class="search-box">
+  <input type="text" id="searchInput" placeholder="Search by location (e.g. Makerere)">
+  <button onclick="searchListings()">Search</button>
+</div>
 
-<div class="listing">
-  <img src="images/house1.jpg">
-  <h3>Single Room – Makerere</h3>
-  <p>UGX 300,000 per month</p>
+<!-- 🏠 Listings -->
+<div class="listing" data-location="makerere" data-type="single room">
+  <h3>Single Room in Makerere</h3>
+  <p><strong>Location:</strong> Makerere</p>
+  <p><strong>Rent:</strong> UGX 300,000 per month</p>
+  <p><strong>Type:</strong> Single Room</p>
+  <div class="photos">
+    <img src="images/house1.jpg" alt="House photo">
+    <img src="images/house1.jpg" alt="House photo">
+  </div>
+  <p>Cozy single room in a quiet area, close to campus and transport.</p>
   <a href="tel:+256700000000" class="btn">Contact Owner</a>
 </div>
 
-<div class="listing">
-  <img src="images/house2.jpg">
-  <h3>Double Room – Ntinda</h3>
-  <p>UGX 450,000 per month</p>
-  <a href="https://wa.me/256782668545" class="btn">WhatsApp Owner</a>
+<div class="listing" data-location="ntinda" data-type="double room">
+  <h3>Double Room in Ntinda</h3>
+  <p><strong>Location:</strong> Ntinda</p>
+  <p><strong>Rent:</strong> UGX 450,000 per month</p>
+  <p><strong>Type:</strong> Double Room</p>
+  <div class="photos">
+    <img src="images/house2.jpg" alt="House photo">
+    <img src="images/house2.jpg" alt="House photo">
+    <img src="images/house2.jpg" alt="House photo">
+  </div>
+  <p>Spacious double room with balcony and kitchen access.</p>
+  <a href="https://wa.me/256700000000" class="btn">WhatsApp Owner</a>
 </div>
+
+<div class="listing" data-location="kawempe" data-type="hostel">
+  <h3>Hostel Room in Kawempe</h3>
+  <p><strong>Location:</strong> Kawempe</p>
+  <p><strong>Rent:</strong> UGX 250,000 per month</p>
+  <p><strong>Type:</strong> Hostel</p>
+  <div class="photos">
+    <img src="images/house3.jpg" alt="House photo">
+    <img src="images/house3.jpg" alt="House photo">
+  </div>
+  <p>Affordable hostel room for students, near public transport.</p>
+  <a href="tel:+256700000000" class="btn">Contact Owner</a>
+</div>
+
+<a href="index.html" class="btn">Back</a>
+
+<!-- 🔧 JavaScript Search -->
+<script>
+function searchListings() {
+  let input = document.getElementById("searchInput").value.toLowerCase();
+  let listings = document.getElementsByClassName("listing");
+  
+  for (let i = 0; i < listings.length; i++) {
+    let location = listings[i].getAttribute("data-location");
+    if (location.includes(input)) {
+      listings[i].style.display = "block";
+    } else {
+      listings[i].style.display = "none";
+    }
+  }
+
+  for (let i = 0; i < listings.length; i++) {
+    let rent = listings[i].getAttribute("data-rent");
+    if (location.includes(input)) {
+      listings[i].style.display = "block";
+    } else {
+      listings[i].style.display = "none";
+    }
+  }
+}
+</script>
 
 </body>
 </html>

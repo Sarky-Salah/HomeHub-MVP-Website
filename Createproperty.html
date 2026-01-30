@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Create Property – HomeHub</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<h2>Create A New Property</h2>
+
+<form id="propertyForm">
+  <label for="title">Property Title</label>
+  <input type="text" id="title" name="title" placeholder="e.g., Single Room in Makerere" required>
+
+  <label for="location">Location (Area Only)</label>
+  <input type="text" id="location" name="location" placeholder="e.g., Makerere" required>
+
+  <label for="price">Rent Price (UGX)</label>
+  <input type="number" id="price" name="price" placeholder="e.g., 300000" required>
+
+  <label for="type">Type</label>
+  <select id="type" name="type" required>
+    <option value="">Select Type</option>
+    <option value="single room">Single Room</option>
+    <option value="double room">Double Room</option>
+    <option value="hostel">Hostel</option>
+    <option value="apartment">Apartment</option>
+  </select>
+
+  <label for="description">Short Description</label>
+  <textarea id="description" name="description" placeholder="Write a short description" rows="3" required></textarea>
+
+  <label for="photos">Photos (Select 2–5 files)</label>
+<input type="file" id="photos" name="photos" accept="image/*" multiple required>
+<div class="preview" id="preview"></div>
+
+  <label for="contact">Contact Link</label>
+  <input type="text" id="contact" name="contact" placeholder="tel:+256700000000 or WhatsApp link" required>
+
+  <button type="submit" class="btn">Create Property</button>
+</form>
+
+<a href="index.html" class="btn">Back</a>
+
+<script>
+document.getElementById("propertyForm").addEventListener("submit", function(e){
+  e.preventDefault(); // prevent page refresh
+  const photosInput = document.getElementById("photos");
+  const previewDiv = document.getElementById("preview");
+  // Show preview of selected images
+    photosInput.addEventListener("change", function() {
+    previewDiv.innerHTML = ""; // Clear previous previews
+    const files = photosInput.files;
+
+
+    if(files.length < 2 || files.length > 5) {
+    alert("Please select between 2 and 5 photos.");
+    photosInput.value = "";
+    return;
+    }
+
+
+    Array.from(files).forEach(file => {
+    const reader = new FileReader();
+    reader.onload = function(e) {
+    const img = document.createElement("img");
+    img.src = e.target.result;
+    previewDiv.appendChild(img);
+    }
+    reader.readAsDataURL(file);
+    });
+    });
+
+
+    document.getElementById("propertyForm").addEventListener("submit", function(e){
+    e.preventDefault();
+
+    // Reset form and preview
+    this.reset();
+    previewDiv.innerHTML = "";
+    });
+
+  // Collect form data
+  const property = {
+    title: document.getElementById("title").value,
+    location: document.getElementById("location").value.toLowerCase(),
+    price: document.getElementById("price").value,
+    type: document.getElementById("type").value,
+    description: document.getElementById("description").value,
+    photos: document.getElementById("photos").value.split(",").map(url => url.trim()),
+    contact: document.getElementById("contact").value
+  };
+
+  // For now, just log it (later you can save to backend or Firebase)
+  console.log("New Property:", property);
+  alert("Property created successfully! Check console for details.");
+
+  // Reset form
+  this.reset();
+});
+</script>
+
+</body>
+</html>

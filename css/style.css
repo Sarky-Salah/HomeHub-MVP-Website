@@ -1,16 +1,23 @@
 body {
     font-family: Arial, sans-serif;
     padding: 20px;
+    background: lightgray;
   }
   
   header {
-    background: #0a3cff;
+    background: #119400;
     color: white;
     padding: 20px;
   }
+
+  form { 
+    max-width: 500px; 
+    border: 3px double black; 
+    margin: auto; 
+  }
   
   .listing {
-    border: 1px solid #ccc;
+    border: 3px double black;
     padding: 15px;
     margin-bottom: 15px;
   }
@@ -22,8 +29,69 @@ body {
   
   .btn {
     display: inline-block;
-    background: #0a3cff;
+    background: #119400;
+    
     color: white;
     padding: 10px;
     text-decoration: none;
   }
+
+  label { 
+    display: block; 
+    margin-top: 10px; 
+    font-weight: bold; 
+  }
+
+  input, textarea, select {
+       width: 100%; 
+       padding: 8px; 
+       margin-top: 5px; 
+       box-sizing: border-box; }
+
+  .btn {
+       margin-top: 15px; 
+       padding: 10px 15px; 
+       background: #007bff; 
+       color: white; 
+       border: none; 
+       cursor: pointer; 
+       border-radius: 4px; }
+
+  .btn:hover {
+       background: #0056b3; 
+      }
+
+  .preview { 
+      display: flex; 
+      margin-top: 10px; 
+      gap: 5px; 
+      flex-wrap: wrap; 
+    }
+
+  .preview img { 
+      width: 100px; 
+      height: 80px; 
+      object-fit: cover; 
+      border: 1px solid #ccc; 
+      border-radius: 3px; 
+    }
+    
+  .listing img { 
+    width: 150px; 
+    height: 100px; 
+    margin-right: 5px; 
+  }
+  
+  .photos { 
+    display: flex; 
+  }
+
+  .btn { 
+    display: inline-block; 
+    padding: 5px 10px; 
+    background: #007bff; 
+    color: white; 
+    text-decoration: none; 
+    border-radius: 3px; 
+  }
+  
