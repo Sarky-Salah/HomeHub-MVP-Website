@@ -81,7 +81,7 @@ body {
     height: 100px; 
     margin-right: 5px; 
   }
-  
+
   .photos { 
     display: flex; 
   }
@@ -95,3 +95,35 @@ body {
     border-radius: 3px; 
   }
   
+  /* Mobile view */
+@media (max-width: 768px) {
+  .listing {
+  flex-direction: column; /* Stack images on top of text */
+  align-items: center;
+  text-align: center;
+  }
+  
+  
+  .listing .photos {
+  flex-wrap: wrap;
+  justify-content: center;
+  }
+  
+  
+  .listing .photos img {
+  width: 100px;
+  height: 80px;
+  margin: 5px;
+  }
+  
+  
+  .search-box input {
+  width: 70%;
+  padding: 8px;
+  }
+  
+  
+  .search-box button {
+  padding: 8px 12px;
+  }
+  }
